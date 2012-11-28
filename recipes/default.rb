@@ -16,7 +16,7 @@ nexus_root = "http://mvnrepo.nordstrom.net/nexus/content/repositories/thirdparty
 remote_file "#{Chef::Config[:file_cache_path]}/#{chef_file}" do
   source "#{nexus_root}/#{chef_version}.#{distro}.#{arch}/#{chef_file}"
   mode "644"
-  checksum "0f08d4fda737d79fffb593822d7cc69d0248ce96"
+  checksum "0665393d6c1640e3cdf913e7dc93d281e5252efd4c134de884d0439504484454"
 end
 
 package "chef-client" do
