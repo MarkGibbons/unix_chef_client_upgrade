@@ -8,4 +8,4 @@ version          "0.2.0"
 
 name             "chef-client-upgrade"
 
-depends "windows"
+depends "windows", "1.7.0"
