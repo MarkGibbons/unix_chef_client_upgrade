@@ -8,7 +8,7 @@
 
 nexus        = data_bag_item('shared', 'nexus')
 version      = node["chef-client-upgrade"]["version"]
-package_name = node["chef-client-upgrade"]["windows-package-name"]
+package_name = node["chef-client-upgrade"]["display_name"]
 installer    = "chef-client-#{version}.msi"
 url          = node["chef-client-upgrade"]["url"]
 source_url   = "#{nexus["url"]}/#{url}/#{version}/#{installer}"
