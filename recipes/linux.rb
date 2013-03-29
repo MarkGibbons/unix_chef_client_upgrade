@@ -11,6 +11,7 @@ nexus = data_bag_item('shared', 'nexus')
 chef_version = node['chef-client-upgrade']['version']
 distro = "el5"
 arch = "#{node[:kernel][:machine]}"
+chef_file = "chef-#{chef_version}.#{distro}.#{arch}.rpm"
 
 checksum = node['chef-client-upgrade']['rpm_checksum']
 
