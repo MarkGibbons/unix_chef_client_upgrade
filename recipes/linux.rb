@@ -9,16 +9,20 @@
 nexus = data_bag_item('shared', 'nexus')
 chef_version = node['chef-client-upgrade']['version']
 
-case platform_family
-when "rhel"
-  distro = "el" + node.platform_version.split('.')[0]
-else 
-  return "0"
+distro = ""
+if defined? node['platform_family'] 
+  case node['platform_family']
+  when "rhel"
+    distro = "el" + node['platform_version'].split('.')[0]
+  else 
+    return "0"
+  end
 end
-  arch = "#{node[:kernel][:machine]}"
+
+arch = "#{node[:kernel][:machine]}"
 
 # current support is only for rhel5 64 bit.
-if #{distro} == "el5" || #{arch} == "x86_64" then
+if #{distro} == "el5" && #{arch} == "x86_64" then
 
   chef_file = "chef-#{chef_version}.#{distro}.#{arch}.rpm"
 
