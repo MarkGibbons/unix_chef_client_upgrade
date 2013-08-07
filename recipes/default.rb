@@ -12,4 +12,3 @@ when "linux"
 when "windows"
   include_recipe "chef-client-upgrade::windows"
 end
-

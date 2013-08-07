@@ -6,6 +6,10 @@ This file is used to list changes made in each version of client_upgrade.
 
 * Initial release of client_upgrade
 
+## 0.3.4:
+
+* Using yum packages on Satellite server instead of Nexus.
+
 - - - 
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 
