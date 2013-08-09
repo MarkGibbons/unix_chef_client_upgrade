@@ -9,6 +9,8 @@
 case node['os']
 when "linux"
   include_recipe "chef-client-upgrade::linux"
+when "solaris2"
+  include_recipe "chef-client-upgrade::solaris"
 when "windows"
   include_recipe "chef-client-upgrade::windows"
 end

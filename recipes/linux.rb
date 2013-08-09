@@ -6,6 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 
-package node['chef-client-upgrade']['yum_pkg'] do
-  action :install
+package node['chef-client-upgrade']['pkg_name'] do
+  action :upgrade
 end

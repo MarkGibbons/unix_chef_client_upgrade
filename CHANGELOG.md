@@ -1,14 +1,18 @@
-# CHANGELOG for client_upgrade
+# CHANGELOG for chef-client-upgrade
 
-This file is used to list changes made in each version of client_upgrade.
+This file is used to list changes made in each version of chef-client-upgrade.
 
-## 0.1.0:
+## 0.3.5:
 
-* Initial release of client_upgrade
+Removed Nexus rpm attribute. Added initial support for Solaris. Created solaris.rb, nocheck.erb (template)
 
 ## 0.3.4:
 
 * Using yum packages on Satellite server instead of Nexus.
+
+## 0.1.0:
+
+* Initial release of chef-client-upgrade
 
 - - - 
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
