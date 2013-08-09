@@ -19,8 +19,11 @@ end
 package node['chef-client-upgrade']['pkg_name'] do
   action :install
   source [node['chef-client-upgrade']['pkg_path'],'chef-',node['chef-client-upgrade']['version'],'.solaris2.',node['platform_version'],'_sparc.solaris'].join
-  if node["platform_version"] == "5.10"
-    options "-G -a /var/sadm/install/admin/nocheck"
+  case node["platform_version"]
+    when "5.9"
+      options "-a /var/sadm/install/admin/nocheck"
+    when "5.10"
+      options "-G -a /var/sadm/install/admin/nocheck"
   end
   not_if { node['chef_packages']['chef']['version'] == node['chef-client-upgrade']['ohai_chef_vs'] }
 end
