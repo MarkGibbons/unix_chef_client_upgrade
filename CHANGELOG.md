@@ -4,7 +4,7 @@ This file is used to list changes made in each version of chef-client-upgrade.
 
 ## 0.3.5:
 
-Removed Nexus rpm attribute. Added initial support for Solaris. Created solaris.rb, nocheck.erb (template)
+Removed Nexus rpm attribute. Added initial support for Solaris (9 and 10). Created solaris.rb, nocheck.erb (template)
 
 ## 0.3.4:
 

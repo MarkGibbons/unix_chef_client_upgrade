@@ -4,19 +4,7 @@ Description
 Upgrade the chef-client
 
 Linux    - RedHat    - uses packages on Satellite server
-Unix     - Solaris   - upgrades chef client, but does not remove old one
-
-Example:
-xabv@x0319vt108 xabv $ sudo chef-client -v
-Chef: 11.4.0
-
-xabv@x0319vt108 xabv $ pkginfo | grep chef
-application chef                           chef
-application chef-full                      chef-full
-
-Both 10.8 and 11.4 are present
-
-TO DO: Add cleanup function
+Unix     - Solaris   - upgrades chef client
 
 Requirements
 ============

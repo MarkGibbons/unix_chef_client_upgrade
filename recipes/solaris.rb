@@ -7,7 +7,6 @@
 # All rights reserved - Do Not Redistribute
 
 # Create nocheck - cannot install package non-interactively without this file
-# Works on Solaris 5.10, what about 5.9?
 template node['chef-client-upgrade']['nocheck'] do
   source "nocheck.erb"
   owner "root"
