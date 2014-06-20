@@ -1,10 +1,9 @@
 # encoding: utf-8
 name 'chef-client-upgrade'
 maintainer 'Nordstrom, Inc.'
-maintainer_email 'jon.decamp@nordstrom.com'
+maintainer_email 'itunixadminall@nordstrom.com'
 description 'upgrades the Chef client'
 license 'All rights reserved'
-long_description 'Upgrades Chef client'
 version '0.3.7'
 
 recommends 'windows', '~> 1.12.8'
