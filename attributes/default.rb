@@ -13,8 +13,8 @@ when 'linux'
   rhel = "el#{platform_version.to_i}"
   default[:chef_client_upgrade][:chef_rhel_release] = '2'
   default[:chef_client_upgrade][:chef_rhel_version] = '11.12.8'
-  default[:chef_client_upgrade][:chef_pkg_version] = 
-    "#{node[:chef_client_upgrade][:chef_rhel_version]}-#{node[:chef_client_upgrade][:chef_rhel_release]}.#{rhel}"
+  default[:chef_client_upgrade][:chef_pkg_version] =
+  "#{node[:chef_client_upgrade][:chef_rhel_version]}-#{node[:chef_client_upgrade][:chef_rhel_release]}.#{rhel}"
 
 when 'solaris2'
   default[:chef_client_upgrade][:chef_solaris_release] = '2'
