@@ -1,28 +1,31 @@
-#
+# encoding: utf-8
 # Cookbook Name:: chef-client-upgrade
 # Recipe:: solaris
 #
-# Copyright 2013, Nordstrom, Inc.
+# Copyright 2013, 2014 Nordstrom, Inc.
 #
 # All rights reserved - Do Not Redistribute
 
-# Create nocheck - cannot install package non-interactively without this file
-template node['chef-client-upgrade']['nocheck'] do
-  source "nocheck.erb"
-  owner "root"
-  group "root"
-  mode 00744
-  action :create
+include_recipe 'solaris_pkg'
+
+chef_pkg = File.join(Chef::Config[:file_cache_path], node[:chef_client_upgrade][:solaris_pkg])
+
+remote_file chef_pkg do
+  source node[:chef_client_upgrade][:solaris_pkg_path]
+  notifies :remove, 'package[remove_chef]', :immediately
+  not_if { node[:chef_packages][:chef][:version] == node[:chef_client_upgrade][:chef_solaris_version] }
 end
 
-package node['chef-client-upgrade']['pkg_name'] do
+# The first pkgrm will almost always fail, retry
+package 'remove_chef' do
+  package_name 'chef'
+  action :nothing
+  retries 2
+end
+
+package node[:chef_client_upgrade][:pkg_name] do
   action :install
-  source [node['chef-client-upgrade']['pkg_path'],'chef-',node['chef-client-upgrade']['version'],'.solaris2.',node['platform_version'],'_sparc.solaris'].join
-  case node["platform_version"]
-    when "5.9"
-      options "-a /var/sadm/install/admin/nocheck"
-    when "5.10"
-      options "-G -a /var/sadm/install/admin/nocheck"
-  end
-  not_if { node['chef_packages']['chef']['version'] == node['chef-client-upgrade']['ohai_chef_vs'] }
+  source chef_pkg
+  options node[:chef_client_upgrade][:optpkg]
+  not_if { node[:chef_packages][:chef][:version] == node[:chef_client_upgrade][:chef_solaris_version] }
 end

@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of chef-client-upgrade.
 
+## 0.3.6:
+
+Fixed the solaris recipe so that the upgrade works.
+Updated to use 11.12.8-2 version of chef.
+
 ## 0.3.5:
 
 Removed Nexus rpm attribute. Added initial support for Solaris (9 and 10). Created solaris.rb, nocheck.erb (template)

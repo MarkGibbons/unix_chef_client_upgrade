@@ -1,4 +1,4 @@
-#
+# encoding: utf-8
 # Cookbook Name:: chef-client-upgrade
 # Recipe:: default
 #
@@ -6,11 +6,11 @@
 #
 # All rights reserved - Do Not Redistribute
 
-case node['os']
-when "linux"
-  include_recipe "chef-client-upgrade::linux"
-when "solaris2"
-  include_recipe "chef-client-upgrade::solaris"
-when "windows"
-  include_recipe "chef-client-upgrade::windows"
+case node[:os]
+when 'linux'
+  include_recipe "#{cookbook_name}::linux"
+when 'solaris2'
+  include_recipe "#{cookbook_name}::solaris"
+when 'windows'
+  include_recipe "#{cookbook_name}::windows"
 end
