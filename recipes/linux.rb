@@ -6,7 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-# TODO: Find current version, if higher leave it alone.
 
 yum_package node[:chef_client_upgrade][:pkg_name] do
   action :install

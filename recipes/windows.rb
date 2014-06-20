@@ -2,7 +2,7 @@
 # Cookbook Name:: chef-client-upgrade
 # Recipe:: windows
 #
-# Copyright 2013, Nordstrom, Inc.
+# Copyright 2013, 2014 Nordstrom, Inc.
 #
 # All rights reserved - Do Not Redistribute
 
