@@ -1,4 +1,10 @@
 # encoding: utf-8
+# Cookbook Name:: chef-client-upgrade
+# Attributes: default
+#
+# Copyright 2013, Nordstrom, Inc.
+#
+# All rights reserved - Do Not Redistribute
 
 default[:chef_client_upgrade][:pkg_name]     = 'chef'
 case node[:os]
