@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of chef-client-upgrade.
 
-## 0.3.6:
+## 0.3.7:
 
 Fixed the solaris recipe so that the upgrade works.
 Updated to use 11.12.8-2 version of chef.
