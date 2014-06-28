@@ -11,6 +11,4 @@ when 'linux'
   include_recipe "#{cookbook_name}::linux"
 when 'solaris2'
   include_recipe "#{cookbook_name}::solaris"
-when 'windows'
-  include_recipe "#{cookbook_name}::windows"
 end
