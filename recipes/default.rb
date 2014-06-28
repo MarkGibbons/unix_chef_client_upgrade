@@ -1,5 +1,5 @@
 # encoding: utf-8
-# Cookbook Name:: chef-client-upgrade
+# Cookbook Name:: unix_chef_client_upgrade
 # Recipe:: default
 #
 # Copyright 2013, 2014 Nordstrom, Inc.

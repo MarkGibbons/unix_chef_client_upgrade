@@ -1,6 +1,10 @@
-# CHANGELOG for chef-client-upgrade
+# CHANGELOG for unix_chef_client_upgrade
 
-This file is used to list changes made in each version of chef-client-upgrade.
+This file is used to list changes made in each version of chef_client_upgrade
+
+## 0.4.0:
+
+Rename to unix_chef_client_upgrade and remove the windows support.
 
 ## 0.3.7:
 
@@ -17,7 +21,7 @@ Removed Nexus rpm attribute. Added initial support for Solaris (9 and 10). Creat
 
 ## 0.1.0:
 
-* Initial release of chef-client-upgrade
+* Initial release of chef_client_upgrade
 
 - - - 
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     box.vm.provision :chef_solo do |chef|
       chef.log_level = :debug
       chef.run_list = [
-        "recipe[chef-client-upgrade::default]"
+        "recipe[unix_chef_client_upgrade::default]"
       ]
     end
   end
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
       chef.log_level = :debug
       chef.run_list = [
         "recipe[rhn_satellite::default]",
-        "recipe[chef-client-upgrade::default]"
+        "recipe[unix_chef_client_upgrade::default]"
       ]
     end
   end
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
       chef.log_level = :debug
       chef.run_list = [
         "recipe[rhn_satellite::default]",
-        "recipe[chef-client-upgrade::default]"
+        "recipe[unix_chef_client_upgrade::default]"
       ]
     end
   end

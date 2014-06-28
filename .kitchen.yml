@@ -6,11 +6,9 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.4
 
 suites:
   - name: default
     run_list:
-      - recipe[chef-client-upgrade::default]
+      - recipe[unix_chef_client_upgrade::default]
     attributes:
