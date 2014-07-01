@@ -1,0 +1,14 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+
+suites:
+  - name: default
+    run_list:
+      - recipe[unix_chef_client_upgrade::default]
+    attributes:
