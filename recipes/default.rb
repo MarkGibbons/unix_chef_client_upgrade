@@ -12,3 +12,4 @@ when 'linux'
 when 'solaris2'
   include_recipe "#{cookbook_name}::solaris"
 end
+include_recipe "#{cookbook_name}::upgraded"

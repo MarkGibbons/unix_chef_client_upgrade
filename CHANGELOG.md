@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 0.4.1:
+
+The chef-client run needs to end after the upgrade.  Downstream things fail when
+the version changes mid run.
+
 ## 0.4.0:
 
 Rename to unix_chef_client_upgrade and remove the windows support.
