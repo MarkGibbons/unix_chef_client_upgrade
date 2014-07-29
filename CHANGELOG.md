@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 0.4.2:
+
+The package remove before install is not needed with a change to the answer
+file.
+
 ## 0.4.1:
 
 The chef-client run needs to end after the upgrade.  Downstream things fail when
