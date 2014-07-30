@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 0.4.3:
+
+Change the default solaris architecture to sparc for those cases where
+node[:kernel][:machine] is not defined.
+
 ## 0.4.2:
 
 The package remove before install is not needed with a change to the answer

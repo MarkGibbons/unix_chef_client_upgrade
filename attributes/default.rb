@@ -2,7 +2,7 @@
 # Cookbook Name:: unix_chef_client_upgrade
 # Attributes: default
 #
-# Copyright 2013, Nordstrom, Inc.
+# Copyright (C) 2013,2014 Nordstrom, Inc.
 #
 # All rights reserved - Do Not Redistribute
 
@@ -18,7 +18,7 @@ when 'linux'
 when 'solaris2'
   default[:unix_chef_client_upgrade][:chef_solaris_release] = '2'
   default[:unix_chef_client_upgrade][:chef_solaris_version] = '11.12.8'
-  type = %w(sun4v sun4u).include?(node[:kernel][:machine]) ? 'sparc' : 'x86'
+  type = %w(pc).include?(node[:kernel][:machine]) ? 'x86' : 'sparc'
   default[:unix_chef_client_upgrade][:solaris_pkg] = "chef-#{node[:unix_chef_client_upgrade][:chef_solaris_version]}-#{node[:unix_chef_client_upgrade][:chef_solaris_release]}.solaris2.#{node[:platform_version]}.#{type}"
   default[:unix_chef_client_upgrade][:solaris_pkg_path] =
     File.join(node[:httpdistro][:dir], node[:unix_chef_client_upgrade][:solaris_pkg])
