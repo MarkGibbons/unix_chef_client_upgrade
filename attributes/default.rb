@@ -16,8 +16,13 @@ when 'linux'
     "#{node[:unix_chef_client_upgrade][:chef_rhel_version]}-#{node[:unix_chef_client_upgrade][:chef_rhel_release]}.#{rhel}"
 
 when 'solaris2'
-  default[:unix_chef_client_upgrade][:chef_solaris_release] = '2'
-  default[:unix_chef_client_upgrade][:chef_solaris_version] = '11.12.8'
+  if node[:os_version] == '5.11'
+    default[:unix_chef_client_upgrade][:chef_solaris_release] = '1'
+    default[:unix_chef_client_upgrade][:chef_solaris_version] = '11.16.4'
+  else
+    default[:unix_chef_client_upgrade][:chef_solaris_release] = '2'
+    default[:unix_chef_client_upgrade][:chef_solaris_version] = '11.12.8'
+  end
   type = %w(pc).include?(node[:kernel][:machine]) ? 'x86' : 'sparc'
   default[:unix_chef_client_upgrade][:solaris_pkg] = "chef-#{node[:unix_chef_client_upgrade][:chef_solaris_version]}-#{node[:unix_chef_client_upgrade][:chef_solaris_release]}.solaris2.#{node[:platform_version]}.#{type}"
   default[:unix_chef_client_upgrade][:solaris_pkg_path] =
