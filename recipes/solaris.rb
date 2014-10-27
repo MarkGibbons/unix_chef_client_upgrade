@@ -18,6 +18,7 @@ end
 package node[:unix_chef_client_upgrade][:pkg_name] do
   action :install
   source chef_pkg
+  provider Chef::Provider::Package::Solaris
   options node[:unix_chef_client_upgrade][:optpkg]
   not_if { node[:chef_packages][:chef][:version] == node[:unix_chef_client_upgrade][:chef_solaris_version] }
   notifies :create, 'ruby_block[chef-client-upgraded]', :immediately
