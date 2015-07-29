@@ -16,6 +16,11 @@ remote_file chef_pkg do
 end
 
 package node[:unix_chef_client_upgrade][:pkg_name] do
+  action :remove
+  retries 5
+end
+
+package node[:unix_chef_client_upgrade][:pkg_name] do
   action :install
   source chef_pkg
   options node[:unix_chef_client_upgrade][:optpkg]
