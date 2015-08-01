@@ -1,94 +1,52 @@
-# Put files/directories that should be ignored in this file when uploading
-# or sharing to the community site.
-# Lines that start with '# ' are comments.
-
-# OS generated files #
-######################
-.DS_Store
-Icon?
-nohup.out
-ehthumbs.db
-Thumbs.db
-
-# SASS #
-########
-.sass-cache
-
-# EDITORS #
-###########
-\#*
-.#*
-*~
-*.sw[a-z]
 *.bak
-REVISION
-TAGS*
-tmtags
-*_flymake.*
-*_flymake
-*.tmproj
-.project
-.settings
-mkmf.log
-
-## COMPILED ##
-##############
-a.out
+*.class
+*.com
+*.dll
+*.exe
 *.o
 *.pyc
 *.so
-*.com
-*.class
-*.dll
-*.exe
+*.sw[az]
+*.tmproj
+*/.bzr/*
+*/.git
+*/.hg/*
 */rdoc/
-
-# Testing #
-###########
-.watchr
+*_flymake
+*_flymake.*
+*~
+.#*
+.DS_Store
+.git
+.gitattributes
+.gitconfig
+.gitignore
+.gitmodules
+.kitchen.local.yml
+.kitchen/
+.project
 .rspec
+.sasscache
+.settings
+.svn
+.vagrant
+.watchr
+Berksfile
+Gemfile
+Guardfile
+Icon?
+Procfile
+REVISION
+Rakefile
+TAGS*
+Thumbs.db
+\#*
+a.out
+ehthumbs.db
+features/*
+mkmf.log
+nohup.out
 spec/*
 spec/fixtures/*
 test/*
-features/*
-Guardfile
-Procfile
-
-# SCM #
-#######
-.git
-*/.git
-.gitignore
-.gitmodules
-.gitconfig
-.gitattributes
-.svn
-*/.bzr/*
-*/.hg/*
-*/.svn/*
-
-# Berkshelf #
-#############
-cookbooks/*
-tmp
-
-# Cookbooks #
-#############
-CONTRIBUTING
-CHANGELOG*
-
-# Strainer #
-############
-Colanderfile
-Strainerfile
-.colander
-.strainer
-
-# Vagrant #
-###########
-.vagrant
-Vagrantfile
-
-# Travis #
-##########
-.travis.yml
+tmtags

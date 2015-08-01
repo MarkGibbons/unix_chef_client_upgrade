@@ -2,9 +2,9 @@
 name 'unix_chef_client_upgrade'
 maintainer 'Nordstrom, Inc.'
 maintainer_email 'itunixadminall@nordstrom.com'
-description 'upgrades the Chef client'
+description 'Upgrades the Chef client'
 license 'All rights reserved'
-version '0.4.4'
+version '0.5.0'
 
 depends 'solaris_pkg', '>= 0.1.2'
 depends 'http_distro'

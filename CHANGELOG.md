@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 0.5.0:
+* Added the test kitchen framework.  Set up tests and got the install to work.
+* Changed so that chef is upgraded and never downgraded.
+
 ## 0.4.4:
 * Solaris 11 attributes added; package provider explicitly set to Solaris (until IPS server available)
 
