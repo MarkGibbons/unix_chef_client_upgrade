@@ -1,5 +1,11 @@
-source 'http://y0319t1027:80'
+source 'http://y0319t1027'
 
 cookbook 'rhn_satellite'
-cookbook 'chef_handler', path: '../chef_handler'
 metadata
+
+# load local overrides
+berksfile_dir = File.absolute_path(File.join('.', 'lib', 'berksfile'))
+Dir.glob(File.join(berksfile_dir, '*.berks')).each do |snippet|
+  # rubocop:disable Lint/Eval
+  eval File.read(snippet), nil, snippet
+end
