@@ -6,7 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 
-require 'chef/version_constraint'
 current_version = Chef::Version.new(VERSION)
 next_version = Chef::Version.new(node['unix_chef_client_upgrade']['chef_version'])
 
