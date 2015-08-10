@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 0.5.1:
+* Verify that the version is semver compatibile. 3 part all numeric.
+
 ## 0.5.0:
 * Added the test kitchen framework.  Set up tests and got the install to work.
 * Changed so that chef is upgraded and never downgraded.
