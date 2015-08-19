@@ -6,7 +6,7 @@ driver_config:
   https_proxy: http://webproxysea.nordstrom.net:8181
 
 provisioner:
-  name: chef_zero
+  name: chef_solo
 
 platforms:
   - name: updaterhel5-update
@@ -42,7 +42,6 @@ platforms:
     driver_config:
       box: nordsol10
       box_url: http://y0319p297.nordstrom.net/downloads/vagrant-solaris10.box
-      require_chef_omnibus: 11.12.0
   - name: updatesol11-update
     attributes:
       unix_chef_client_upgrade:
@@ -50,7 +49,6 @@ platforms:
     driver_config:
       box: nordsol11
       box_url: http://y0319p297.nordstrom.net/downloads/vagrant-solaris11.box
-      require_chef_omnibus: 11.12.8
 
 suites:
   - name: default
