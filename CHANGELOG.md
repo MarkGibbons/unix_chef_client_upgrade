@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 1.0.0
+* Change the minimum chef version to 12.4.1
+
 ## 0.5.1:
 * Verify that the version is semver compatibile. 3 part all numeric.
 
