@@ -2,7 +2,7 @@
 # Cookbook Name:: unix_chef_client_upgrade
 # Recipe:: upgraded
 #
-# Copyright 2013, 2014 Nordstrom, Inc.
+# Copyright 2013, 2014, 2015 Nordstrom, Inc.
 #
 # All rights reserved - Do Not Redistribute
 
