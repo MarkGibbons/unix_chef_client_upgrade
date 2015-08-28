@@ -13,14 +13,16 @@ remote_file chef_pkg do
   source node['unix_chef_client_upgrade']['solaris_pkg_path']
 end
 
-package node['unix_chef_client_upgrade']['pkg_name'] do
+package "remove #{node['unix_chef_client_upgrade']['pkg_name']}" do
+  package_name 'chef'
   provider Chef::Provider::Package::Solaris
   action :remove
   options node['unix_chef_client_upgrade']['optpkg']
   retries 5
 end
 
-package node['unix_chef_client_upgrade']['pkg_name'] do
+package "install #{node['unix_chef_client_upgrade']['pkg_name']}" do
+  package_name 'chef'
   action :install
   source chef_pkg
   provider Chef::Provider::Package::Solaris
