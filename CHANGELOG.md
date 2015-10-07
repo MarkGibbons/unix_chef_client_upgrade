@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 1.1.0
+* Change the solaris install to install on all local zones when the global zone is updated.
+* Delete the old cheffull package from Solaris servers
+
 ## 1.0.1
 * Change the solaris install to use separate resource names for remove and install.
 

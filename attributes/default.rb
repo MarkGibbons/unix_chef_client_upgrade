@@ -30,4 +30,6 @@ when 'solaris2'
     File.join(node['httpdistro']['dir'], node['unix_chef_client_upgrade']['chef_pkg'])
   default['unix_chef_client_upgrade']['optpkg'] = "-a #{node['solaris_pkg']['nocheck']}"
   default['unix_chef_client_upgrade']['current_zone_only'] = node['kernel']['release'] == '5.9' ? '' : '-G'
+  # Turn off current zone only.  Install in the local zones when updating the global zone.
+  default['unix_chef_client_upgrade']['current_zone_only'] = ''
 end
