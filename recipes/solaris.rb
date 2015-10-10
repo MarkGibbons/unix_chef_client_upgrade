@@ -13,8 +13,8 @@ remote_file chef_pkg do
   source node['unix_chef_client_upgrade']['solaris_pkg_path']
 end
 
-package "remove cheffull" do
-  package_name 'cheffull'
+package "remove chef-full" do
+  package_name 'chef-full'
   provider Chef::Provider::Package::Solaris
   action :remove
   options node['unix_chef_client_upgrade']['optpkg']

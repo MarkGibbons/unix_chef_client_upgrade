@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 1.1.1
+* Fix typo in chef-full package name.
+
 ## 1.1.0
 * Change the solaris install to install on all local zones when the global zone is updated.
 * Delete the old cheffull package from Solaris servers
