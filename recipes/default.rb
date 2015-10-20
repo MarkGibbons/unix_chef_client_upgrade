@@ -4,7 +4,7 @@
 #
 # Copyright 2013, 2014, 2015 Nordstrom, Inc.
 #
-# All rights reserved - Do Not Redistribute
+# Licensed for use with the Apache2 license
 
 unless VERSION =~ /\d+\.\d+\.\d+/
   Chef::Application.fatal!('Unexpected chef version format found while checking for upgrade.')

@@ -4,7 +4,7 @@
 #
 # Copyright (C) 2013,2014,2015 Nordstrom, Inc.
 #
-# All rights reserved - Do Not Redistribute
+# Licensed for use with the Apache2 license
 
 default['unix_chef_client_upgrade']['pkg_name'] = 'chef'
 default['unix_chef_client_upgrade']['kill_after_install'] = true

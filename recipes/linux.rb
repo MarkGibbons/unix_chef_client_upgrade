@@ -4,7 +4,7 @@
 #
 # Copyright 2013, 2014, 2015 Nordstrom, Inc.
 #
-# All rights reserved - Do Not Redistribute
+# Licensed for use with the Apache2 license 
 #
 
 yum_package node['unix_chef_client_upgrade']['pkg_name'] do

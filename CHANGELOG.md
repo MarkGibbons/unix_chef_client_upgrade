@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of chef_client_upgrade
 
+## 1.1.1
+* Change the licensing to Apache2
+
 ## 1.1.0
 * Fix typo in chef-full package name.
 

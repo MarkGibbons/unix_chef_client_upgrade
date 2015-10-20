@@ -4,7 +4,7 @@
 #
 # Copyright 2013, 2014, 2015 Nordstrom, Inc.
 #
-# All rights reserved - Do Not Redistribute
+# Licensed for use with the Apache2 license
 
 ruby_block 'chef-client-upgraded' do
   block do
