@@ -1,9 +1,12 @@
-name             "chef-client-upgrade"
-maintainer       "Nordstrom, Inc."
-maintainer_email "jon.decamp@nordstrom.com"
-description      "upgrades the Chef client"
-license          "All rights reserved"
-long_description "Upgrades Chef client"
-version          "0.3.6"
+# encoding: utf-8
+name 'unix_chef_client_upgrade'
+maintainer 'Nordstrom, Inc.'
+maintainer_email 'itunixadminall@nordstrom.com'
+description 'Upgrades the Chef client'
+license 'Apache2 licence as specified in the License file.'
+version '1.1.1'
 
-recommends "windows", "~> 1.12.8"
+depends 'solaris_pkg', '>= 0.1.2'
+depends 'http_distro'
+supports 'rhel'
+supports 'solaris'

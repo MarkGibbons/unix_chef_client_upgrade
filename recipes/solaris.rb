@@ -1,28 +1,39 @@
-#
-# Cookbook Name:: chef-client-upgrade
+# Cookbook Name:: unix_chef_client_upgrade
 # Recipe:: solaris
 #
-# Copyright 2013, Nordstrom, Inc.
+# Copyright (C) 2013, 2014, 2015 Nordstrom, Inc.
 #
-# All rights reserved - Do Not Redistribute
+# Licensed for use with the Apache2 license
 
-# Create nocheck - cannot install package non-interactively without this file
-template node['chef-client-upgrade']['nocheck'] do
-  source "nocheck.erb"
-  owner "root"
-  group "root"
-  mode 00744
-  action :create
+include_recipe 'solaris_pkg'
+
+chef_pkg = File.join(Chef::Config['file_cache_path'], node['unix_chef_client_upgrade']['chef_pkg'])
+
+remote_file chef_pkg do
+  source node['unix_chef_client_upgrade']['solaris_pkg_path']
 end
 
-package node['chef-client-upgrade']['pkg_name'] do
+package "remove chef-full" do
+  package_name 'chef-full'
+  provider Chef::Provider::Package::Solaris
+  action :remove
+  options node['unix_chef_client_upgrade']['optpkg']
+  retries 5
+end
+
+package "remove #{node['unix_chef_client_upgrade']['pkg_name']}" do
+  package_name 'chef'
+  provider Chef::Provider::Package::Solaris
+  action :remove
+  options node['unix_chef_client_upgrade']['optpkg']
+  retries 5
+end
+
+package "install #{node['unix_chef_client_upgrade']['pkg_name']}" do
+  package_name 'chef'
   action :install
-  source [node['chef-client-upgrade']['pkg_path'],'chef-',node['chef-client-upgrade']['version'],'.solaris2.',node['platform_version'],'_sparc.solaris'].join
-  case node["platform_version"]
-    when "5.9"
-      options "-a /var/sadm/install/admin/nocheck"
-    when "5.10"
-      options "-G -a /var/sadm/install/admin/nocheck"
-  end
-  not_if { node['chef_packages']['chef']['version'] == node['chef-client-upgrade']['ohai_chef_vs'] }
+  source chef_pkg
+  provider Chef::Provider::Package::Solaris
+  options "#{node['unix_chef_client_upgrade']['optpkg']} #{node['unix_chef_client_upgrade']['current_zone_only']}"
+  notifies :create, 'ruby_block[chef-client-upgraded]', :immediately
 end

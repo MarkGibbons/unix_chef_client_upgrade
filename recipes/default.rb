@@ -1,16 +1,23 @@
-#
-# Cookbook Name:: chef-client-upgrade
+# encoding: utf-8
+# Cookbook Name:: unix_chef_client_upgrade
 # Recipe:: default
 #
-# Copyright 2013, Nordstrom, Inc.
+# Copyright 2013, 2014, 2015 Nordstrom, Inc.
 #
-# All rights reserved - Do Not Redistribute
+# Licensed for use with the Apache2 license
 
-case node['os']
-when "linux"
-  include_recipe "chef-client-upgrade::linux"
-when "solaris2"
-  include_recipe "chef-client-upgrade::solaris"
-when "windows"
-  include_recipe "chef-client-upgrade::windows"
+unless VERSION =~ /\d+\.\d+\.\d+/
+  Chef::Application.fatal!('Unexpected chef version format found while checking for upgrade.')
+end
+current_version = Chef::Version.new(VERSION)
+next_version = Chef::Version.new(node['unix_chef_client_upgrade']['chef_version'])
+
+if next_version > current_version
+  case node['os']
+  when 'linux'
+    include_recipe "#{cookbook_name}::linux"
+  when 'solaris2'
+    include_recipe "#{cookbook_name}::solaris"
+  end
+  include_recipe "#{cookbook_name}::upgraded"
 end
